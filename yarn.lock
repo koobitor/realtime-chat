@@ -2197,6 +2197,10 @@ hawk@~6.0.2:
     hoek "4.x.x"
     sntp "2.x.x"
 
+highlight.js@^9.11.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -2708,6 +2712,10 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+marked@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.4.0.tgz#9ad2c2a7a1791f10a852e0112f77b571dce10c66"
 
 math-random@^1.0.1:
   version "1.0.1"
@@ -3550,6 +3558,12 @@ react-dom@^16.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-highlight@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-highlight/-/react-highlight-0.12.0.tgz#34de986a0bfdf228904d0c269b69538d95b35802"
+  dependencies:
+    highlight.js "^9.11.0"
 
 react-lifecycles-compat@3.0.4:
   version "3.0.4"
