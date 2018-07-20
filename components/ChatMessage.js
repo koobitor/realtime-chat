@@ -1,4 +1,12 @@
 import React, { Component } from 'react'
+import marked from 'marked'
+import Highlight from 'react-highlight'
+
+marked.setOptions({
+  gfm: true,
+  tables: true,
+  breaks: true
+})
 
 class ChatMessage extends Component {
 
@@ -6,7 +14,7 @@ class ChatMessage extends Component {
     const { position = 'left', message } = this.props
     const isRight = position.toLowerCase() === 'right'
 
-    const align = isRight ? 'text-right' : 'text-left'
+    let align = isRight ? 'text-right' : 'text-left'
     const justify = isRight ? 'justify-content-end' : 'justify-content-start'
 
     const messageBoxStyles = {
@@ -24,7 +32,14 @@ class ChatMessage extends Component {
     const regex = new RegExp(expression)
 
     let render
-    if(message.match(regex)){
+    if(/```[a-z]*\n[\s\S]*?\n```/g.test(message)) {
+      render = (
+        <Highlight innerHTML>
+          {marked(message)}
+        </Highlight>
+      )
+      align = 'text-left'
+    }else if(message.match(regex)){
       render = (<a href={message} target="_blank">{message}</a>)
     }else{
       render = message
