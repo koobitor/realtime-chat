@@ -17,5 +17,10 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "sentiment": "^5.0.1"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
   }
 }
