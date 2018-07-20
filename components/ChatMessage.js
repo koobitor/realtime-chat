@@ -20,10 +20,20 @@ class ChatMessage extends Component {
       whiteSpace: 'pre-wrap'
     }
 
+    const expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi
+    const regex = new RegExp(expression)
+
+    let render
+    if(message.match(regex)){
+      render = (<a href={message} target="_blank">{message}</a>)
+    }else{
+      render = message
+    }
+
     return <div className={`w-100 my-1 d-flex ${justify}`}>
       <div className="bg-light rounded border border-gray p-2" style={messageBoxStyles}>
         <span className={`d-block text-secondary ${align}`} style={messageStyles}>
-          {message}
+          {render}
         </span>
       </div>
     </div>
