@@ -18,11 +18,15 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-highlight": "^0.12.0",
-    "sentiment": "^5.0.1"
+    "sentiment": "^5.0.1",
+    "snyk": "^1.161.1"
   },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
-  }
+    "start": "NODE_ENV=production node server.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
